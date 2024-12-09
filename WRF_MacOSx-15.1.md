@@ -134,7 +134,7 @@ Success! Great!
 git clone --recurse-submodule https://github.com/wrf-model/WRF.git
 cd ${HOME}/Documents/WRF/WRF
 ./configure
-# Option 20: gfortran+clang (smpar) and your preferred nesting option
+# Option 20: gfortran+clang (dmpar) and your preferred nesting option
 # Edit the configure.wrf to make sure your compilers, compiler-flags and environment settings are correct. See below.
 ./compile em_real -j 6 > log_compilation.log
 ```
