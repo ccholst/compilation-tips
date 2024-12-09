@@ -134,9 +134,9 @@ Success! Great!
 git clone --recurse-submodule https://github.com/wrf-model/WRF.git
 cd ${HOME}/Documents/WRF/WRF
 ./configure
-# Option 20: gfortran+clang (dmpar) and your preferred nesting option
+# Option 22: gfortran+clang (sm+dmpar) and your preferred nesting option
 # Edit the configure.wrf to make sure your compilers, compiler-flags and environment settings are correct. See below.
-./compile em_real -j 6 > log_compilation.log
+./compile em_real -j 8 > log_compilation.log
 ```
 
 The compilers need to be set correctly, the aliases will not work correctly here.
@@ -144,8 +144,8 @@ The compilers need to be set correctly, the aliases will not work correctly here
 ```bash
 SFC                 = /opt/anaconda3/envs/WRF/bin/arm64-apple-darwin20.0.0-gfortran
 SCC                 = /opt/anaconda3/envs/WRF/bin/arm64-apple-darwin20.0.0-clang
-DM_FC               = mgf
-DM_CC               = mgc
+DM_FC               = .....
+DM_CC               = .....
 ...
 CPP                 = /opt/anaconda3/envs/WRF/bin/arm64-apple-darwin20.0.0-clang-cpp -P -traditional
 ```
@@ -160,7 +160,9 @@ setenv WRF_DIR ${HOME}/Documents/WRF/WRF
 git clone https://github.com/wrf-model/WPS.git
 cd ${HOME}/Documents/WRF/WPS
 ./configure
-# Option 22: 
+# Option 22
+# You need to add -lomp in your config libraries, otherwise it will not work.
+#
 ./compile > log_compilation.log
 ```
 
