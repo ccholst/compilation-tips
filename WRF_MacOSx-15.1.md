@@ -134,9 +134,24 @@ Success! Great!
 git clone --recurse-submodule https://github.com/wrf-model/WRF.git
 cd ${HOME}/Documents/WRF/WRF
 ./configure
-# Edit the configure.wrf to make sure your compilers, compiler-flags and environment settings are correct.
+# Option 20: gfortran+clang (smpar) and your preferred nesting option
+# Edit the configure.wrf to make sure your compilers, compiler-flags and environment settings are correct. See below.
 ./compile em_real -j 6 > log_compilation.log
 ```
+
+The compilers need to be set correctly, the aliases will not work correctly here.
+
+```bash
+SFC                 = /opt/anaconda3/envs/WRF/bin/arm64-apple-darwin20.0.0-gfortran
+SCC                 = /opt/anaconda3/envs/WRF/bin/arm64-apple-darwin20.0.0-clang
+DM_FC               = mgf
+DM_CC               = mgc
+...
+CPP                 = /opt/anaconda3/envs/WRF/bin/arm64-apple-darwin20.0.0-clang-cpp -P -traditional
+```
+The same applies to WPS in the next step.
+
+With these compiler settings, on my MacBookPro M1 Pro it compiled successfully.
 
 ## Step 7: Install WPS
 
@@ -145,6 +160,7 @@ setenv WRF_DIR ${HOME}/Documents/WRF/WRF
 git clone https://github.com/wrf-model/WPS.git
 cd ${HOME}/Documents/WRF/WPS
 ./configure
+# Option 22: 
 ./compile > log_compilation.log
 ```
 
