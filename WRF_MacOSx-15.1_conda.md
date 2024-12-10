@@ -155,6 +155,9 @@ With these compiler settings, on my MacBookPro M1 Pro it compiled successfully.
 
 ## Step 7: Install WPS
 
+> [!WARNING]
+> This is not working due to architecture conflicts in the compilers. I need another solution for this, as fixing is not feasible. Already spent 5 nights on this now.
+
 ```tcsh
 setenv WRF_DIR ${HOME}/Documents/WRF/WRF
 git clone https://github.com/wrf-model/WPS.git
