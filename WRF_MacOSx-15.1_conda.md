@@ -1,5 +1,11 @@
 # Setup for WRF compilation on Macbook M1 arm64 architecture
 
+## WARNING!
+
+This setup does not compile WPS successfully. WRF however works fine.
+
+I have no time or interest in fixing it: There is a clash between clang, cpp and gfortran, in which cpp can not deal with Fortran preprocessing correctly. One could try to install a compatible cpp or wait for flang to become released for Fortran support.
+
 ## Step 1: Apple Developer Command Line Tools
 
 NOT SURE IF REALLY NEEDED, except for libSystem.tbd
