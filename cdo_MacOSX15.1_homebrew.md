@@ -23,4 +23,12 @@ make # This takes a while. You may add j=8 to speed up
 make install prefix=$PWD/build
 ```
 
+The tools should now work:
+
+```tcsh
+$HOME/Documents/WRF/cdo-2.4.4/build/bin/cdo splitday 2018-02-12.grib era5_2018-02-
+# prints: cdo    splitday: Processed 16 variables over 96 timesteps [1.12s 40MB]
+```
+You can then add `$HOME/Documents/WRF/cdo-2.4.4/build/bin` to your `$PATH` environment variable in your `$HOME/.login` file.
+
 Good luck!
