@@ -18,7 +18,7 @@ Give configure all info it could possibly need. cdo is written in C++ and C, as 
 ```tcsh
 ./configure AR=/opt/homebrew/bin/gcc-ar-14 NM=/opt/homebrew/bin/gcc-nm-14 RANLIB=/opt/homebrew/bin/gcc-ranlib-14 CXX=/opt/homebrew/bin/g++-14 CC=/opt/homebrew/bin/gcc-14 CFLAGS=-O2 CPP=/opt/homebrew/bin/cpp-14 --with-netcdf=/opt/homebrew/opt/netcdf --with-hdf5=/opt/homebrew/opt/hdf5 --with-szlib=/opt/homebrew/opt/libaec --with-zlib=/opt/homebrew/opt/zlib --prefix=$PWD/build
 
-make # This takes a while. You may add j=8 to speed up
+make # This takes a while. You may add -j 8 to speed up
 
 make install prefix=$PWD/build
 ```
